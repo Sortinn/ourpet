@@ -19,6 +19,8 @@ import com.tencent.xidian.ourpet.person.Chopper;
 import com.tencent.xidian.ourpet.person.Law;
 import com.tencent.xidian.ourpet.person.Luffy;
 import com.tencent.xidian.ourpet.person.Person;
+import com.tencent.xidian.ourpet.person.Piggy;
+import com.tencent.xidian.ourpet.person.Pikachu;
 import com.tencent.xidian.ourpet.person.Zoro;
 
 import java.lang.reflect.Method;
@@ -57,6 +59,9 @@ public class MyWindowManager {
         if("zoro".equals(name)) person = new Zoro(mContext);
         if("law".equals(name))  person = new Law(mContext);
         if("chopper".equals(name)) person = new Chopper(mContext);
+        if ("piggy".equals(name)) person = new Piggy(mContext);
+        if ("pikachu".equals(name)) person = new Pikachu(mContext);
+
         if(person == null) {
             Log.d(TAG, "MyWindowManager: person == null");
             person = new Luffy(mContext);
