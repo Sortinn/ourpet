@@ -105,6 +105,12 @@ public class PersonSettingDialog extends AlertDialog {
         else if("chopper".equals(mPersonName)){
             mIconId = R.raw.chopper_eat_1_1;//引入chopper图标
             mTitleName = mContext.getResources().getText(R.string.chopper_full_name);//引入chopper的资源名
+        }else if ("piggy".equals(mPersonName)) {
+            mIconId = R.raw.piggy_drink_1;
+            mTitleName = mContext.getResources().getText(R.string.piggy_full_name);
+        } else if ("pikachu".equals(mPersonName)) {
+            mIconId = R.raw.stand_1;
+            mTitleName = mContext.getResources().getText(R.string.pikachu_full_name);
         }else{
 
         }

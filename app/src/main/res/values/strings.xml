@@ -66,6 +66,8 @@
     <string name="zoro_full_name">羅洛亞·卓洛\n(RORONOA·ZORO)</string>
     <string name="law_full_name">特拉法爾加·羅\n(TRAFALGAR·LAW)</string>
     <string name="chopper_full_name">托尼托尼·喬巴\n(TONY ~·CHOPPER)</string>
+    <string name="piggy_full_name">小猪佩奇\n(Peppa Pig)</string>
+    <string name="pikachu_full_name">皮卡丘</string>
 
     <!--PersonSettingAdapter-->
     <string name="choice_at_least_one">至少选择一个</string>
