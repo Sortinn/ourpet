@@ -9,11 +9,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 
+import com.tencent.xidian.ourpet.R;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import akai.floatView.op.luffy.R;
 
 /**
  * Created by sortinn on 2018/5/30.
@@ -48,7 +48,7 @@ public class Piggy extends Person {
         paint.setAntiAlias(true);
         paint.setFilterBitmap(true);
         setFocusable(true);
-        SharedPreferences sp = context.getSharedPreferences(context.getString(R.string.sp_name), Context.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences(context.getString(R.string.our_pets_settings), Context.MODE_PRIVATE);
         res = context.getResources();
         init(sp);
     }
@@ -68,8 +68,8 @@ public class Piggy extends Person {
         //获取界面大小
         measureScreen();
         //人物大小（注意，可能手机上面获得的显示大小跟实际上的不一样）
-        bmpW = decodeResource(res, R.drawable.piggy_drink_0).getWidth();
-        bmpH = decodeResource(res, R.drawable.piggy_drink_0).getHeight();
+        bmpW = decodeResource(res, R.raw.piggy_drink_0).getWidth();
+        bmpH = decodeResource(res, R.raw.piggy_drink_0).getHeight();
         personSize = Float.parseFloat(sp.getString("person_size", "1"));
         drawTime = sp.getBoolean("draw_time", false);
         //长按设置功能
@@ -339,22 +339,22 @@ public class Piggy extends Person {
         switch (actionFlag) {
 
             case FLAG_DRINK:
-                bmpPiggy[0] = decodeResource(res, R.drawable.piggy_drink_0);
-                bmpPiggy[1] = decodeResource(res, R.drawable.piggy_drink_1);
-                bmpPiggy[2] = decodeResource(res, R.drawable.piggy_drink_2);
+                bmpPiggy[0] = decodeResource(res, R.raw.piggy_drink_0);
+                bmpPiggy[1] = decodeResource(res, R.raw.piggy_drink_1);
+                bmpPiggy[2] = decodeResource(res, R.raw.piggy_drink_2);
                 break;
 
             case FLAG_UP:
-                bmpPiggy[0] = decodeResource(res, R.drawable.piggy_fly);
-                bmpPiggy[1] = decodeResource(res, R.drawable.piggy_fly_1);
-                bmpPiggy[2] = decodeResource(res, R.drawable.piggy_fly_2);
+                bmpPiggy[0] = decodeResource(res, R.raw.piggy_fly);
+                bmpPiggy[1] = decodeResource(res, R.raw.piggy_fly_1);
+                bmpPiggy[2] = decodeResource(res, R.raw.piggy_fly_2);
                 break;
             case FLAG_WALK2:
                 upOrDown = Math.random() < 0.5 ? 1 : -1;
             case FLAG_FLY:
-                bmpPiggy[0] = decodeResource(res, R.drawable.piggy_fly_1);
-                bmpPiggy[1] = decodeResource(res, R.drawable.piggy_fly_2);
-                bmpPiggy[2] = decodeResource(res, R.drawable.piggy_fly_3);
+                bmpPiggy[0] = decodeResource(res, R.raw.piggy_fly_1);
+                bmpPiggy[1] = decodeResource(res, R.raw.piggy_fly_2);
+                bmpPiggy[2] = decodeResource(res, R.raw.piggy_fly_3);
                 break;
         }
     }
