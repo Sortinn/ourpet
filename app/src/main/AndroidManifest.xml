@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+    package="com.tencent.xidian.ourpet">
+
+    <!--获取悬浮窗权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+                     tools:ignore = "ProtectedPermissions"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    //允许读取手机状态
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    //读取设备外部存储空间
+
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--人物模块始终以竖屏显示 并且4.0以上隐藏标题栏-->
+        <activity android:name=".store.StorePersonActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <receiver android:name=".PersonFloatService$Receivers"
+                  android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".PersonFloatService"
+            android:configChanges="orientation|keyboardHidden"/>
+        <service
+            android:name=".alarm.service.AlarmService"
+            android:icon="@drawable/glyphicons_049_star"
+            android:label="@string/app_name"
+            android:process="cn.edu.hust.maokelong.alarm.serviceProcess"></service>
+        <receiver android:name=".alarm.service.AlarmServiceBroadcastReciever">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".alarm.preferences.AlarmPreferencesActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".alarm.AlarmActivity">
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".alarm.AlarmActivity" />
+        </activity>
+        <!--<receiver android:name=".FloatWindowBigView$broadcastPetShow">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="ELITOR_CLOCK" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <activity
+            android:name=".alarm.AlarmActivity"
+            android:label="@string/plugin_alarm"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".alarm.alert.AlarmAlertActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+        <receiver android:name=".AlarmAlertBroadcastReciever"></receiver>
+
+    </application>
+
+
+</manifest>

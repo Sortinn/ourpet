@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">ourPet</string>
+    <!--Preference_setting_String_resource-->
+    <!--display_settings-->
+    <string name="display_setting">显示设置</string>
+    <string name="display_animation">显示动画</string>
+    <string name="display_all_the_time">一直显示</string>
+    <string name="display_top_over_all_applications">显示在所有应用上 </string>
+    <string name="display_only_on_desktop_and_this_app">只显示在桌面和本应用程序中</string>
+    <string name="start_during_boot">开机启动</string>
+    <string name="show_the_pet_after_startup_the_phone">确保本程序能开机自启</string>
+    <string name="long_touch_setting">长按设置</string>
+    <string name="long_touch_click_start_app">长按(未移动)动画，启动设置界面</string>
+
+    <!--animation_settings-->
+    <string name="animation_setting">动画设置</string>
+    <string name="select_person">人物选择</string>
+    <string name="select_person_and_setting">选择需要显示的人物和动画</string>
+    <string name="animation_time">动画报时</string>
+    <string name="move_the_person_to_right_or_left">拖动动画到屏幕左边(显示日期)，右边(显示时间)</string>
+    <string name="animation_size">动画大小</string>
+    <string name="click_to_chose_the_size_of_animation">点击选择动画大小</string>
+    <string name="cancel">取消</string>
+    <string name="running_speed">行走速度</string>
+    <string name="click_to_chose_the_running_speed_of_animation">点击选择动画行走速度</string>
+    <string name="running_speed_more_faster_more_power">行走速度(速度越快，耗电越大)</string>
+    <string name="frequency">变换频率</string>
+    <string name="click_to_chose_the_frequency_of_actions">点击选择动画之间变换的频率</string>
+    <string name="more">更多</string>
+
+    <!--StorePersonAdapter_initLocal_select_person-->
+    <string name="luffy">路飛</string>
+    <string name="zoro">卓洛</string>
+    <string name="law">羅</string>
+    <string name="chopper">喬巴</string>
+
+    <!--StorePersonAdapter_initLocal_select_person-->
+    <!--信息保留静态字段-->
+    <string name="our_pets_settings">ourPets_settings</string>
+    <!--getSharePreferences中保留的key-->
+
+    <!--StoreActivity_store_person_layout-->
+    <string name="store_layout_title">人物</string>
+
+    <!--PersonSettingDialog_dialog_person_setting_layout-->
+    <string name="choose">选择</string>
+    <string name="back">后退</string>
+
+    <!--PersonSettingDialog -->
+    <string name="person_state_crawl">爬</string>
+    <string name="person_state_stand">站立</string>
+    <string name="person_state_sit">坐</string>
+    <string name="person_state_walk">走路</string>
+    <string name="person_state_sleep">睡觉</string>
+    <string name="person_state_eat">吃</string>
+    <string name="person_state_eat_meat">吃肉</string>
+    <string name="person_state_dance">跳舞</string>
+    <string name="person_state_ball">毛球</string>
+    <string name="person_state_happy">高兴</string>
+    <string name="person_state_shock">吃惊</string>
+    <string name="person_state_gun">棍子</string>
+    <string name="person_state_star">放金星</string>
+    <string name="luffy_full_name">蒙奇·D·路飛\n(MONKEY·D·LUFFY)</string>
+    <string name="zoro_full_name">羅洛亞·卓洛\n(RORONOA·ZORO)</string>
+    <string name="law_full_name">特拉法爾加·羅\n(TRAFALGAR·LAW)</string>
+    <string name="chopper_full_name">托尼托尼·喬巴\n(TONY ~·CHOPPER)</string>
+
+    <!--PersonSettingAdapter-->
+    <string name="choice_at_least_one">至少选择一个</string>
+    <!--PreferenceAlarmSetting-->
+    <string name="switch_clock"> 打开闹钟设置 </string>
+    <string name="plugin_alarm">闹钟</string>
+
+
+
+    <string name="title_activity_set_alarms">设置闹钟</string>
+    <string name="no_alarms">尚未添加任何闹钟</string>
+
+    <!-- Menu -->
+    <string name="menu_item_new">新建</string>
+    <string name="menu_item_save">保存</string>
+    <string name="menu_item_delete">删除</string>
+
+
+    <color name="title_background_color">#000000</color>
+
+    <string name="button_delete">删除</string>
+    <string name="ok">确定</string>
+    <string name="ensure_delete">确定删除此闹钟？</string>
+
+    <string name="time_sunday">星期天</string>
+    <string name="time_monday">星期一</string>
+    <string name="time_tuesday">星期二</string>
+    <string name="time_wednesday">星期三</string>
+    <string name="time_thursday">星期四</string>
+    <string name="time_friday">星期五</string>
+    <string name="time_saturday">星期六</string>
+    <string name="time_everyday">每天</string>
+
+    <string name="time_day">天</string>
+    <string name="time_hour">小时</string>
+    <string name="time_min">分钟</string>
+    <string name="time_sec">秒</string>
+
+    <string name="default_alarm_label">闹钟</string>
+
+    <string name="dialog_prompt_head">已将闹钟设置为从现在起</string>
+    <string name="dialog_prompt_tail">后提醒</string>
+
+    <string name="preference_active">启用</string>
+    <string name="preference_label">标签</string>
+    <string name="preference_setTime">时间</string>
+    <string name="preference_repeat">重复</string>
+    <string name="preference_delete">删除闹钟</string>
+
+
+</resources>

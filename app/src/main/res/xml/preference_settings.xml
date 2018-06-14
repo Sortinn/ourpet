@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--人物设置 -->
+    <PreferenceCategory android:title="@string/display_setting">
+        <!-- 显示动画 -->
+        <CheckBoxPreference
+            android:key="person_visible"
+            android:title="@string/display_animation"/>
+        <!--一直显示 -->
+        <!--<CheckBoxPreference-->
+            <!--android:key="all_app_visible"-->
+            <!--android:title="@string/display_all_the_time"-->
+            <!--android:summaryOn="@string/display_top_over_all_applications"-->
+            <!--android:summaryOff="@string/display_only_on_desktop_and_this_app"-->
+            <!--android:dependency="person_visible"-->
+            <!--/>-->
+        <!--开机自启-->
+        <CheckBoxPreference
+            android:key="boot_startup"
+            android:title="@string/start_during_boot"
+            android:summary="@string/show_the_pet_after_startup_the_phone"
+            android:dependency="person_visible"/>
+        <!--长按启动设置-->
+        <CheckBoxPreference
+            android:key="long_down"
+            android:title="@string/long_touch_setting"
+            android:summary="@string/long_touch_click_start_app"
+            android:dependency="person_visible"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/animation_setting">
+        <!--人物选择-->
+        <Preference
+            android:key="person_select"
+            android:title="@string/select_person"
+            android:summary="@string/select_person_and_setting"/>
+        <!--动画报时-->
+        <CheckBoxPreference
+            android:key="draw_time"
+            android:title="@string/animation_time"
+            android:summary="@string/move_the_person_to_right_or_left"/>
+        <!--动画大小-->
+        <ListPreference
+            android:key="person_size"
+            android:title="@string/animation_size"
+            android:summary="@string/click_to_chose_the_size_of_animation"
+            android:entries="@array/person_size"
+            android:entryValues="@array/person_size_value"
+            android:defaultValue="0.4"
+            android:negativeButtonText="@string/cancel"/>
+        <!--行走速度-->
+        <ListPreference
+            android:key="frame_time"
+            android:title="@string/running_speed"
+            android:summary="@string/running_speed_more_faster_more_power"
+            android:entries="@array/frame_time"
+            android:entryValues="@array/frame_time_value"
+            android:defaultValue="150"
+            android:negativeButtonText="@string/cancel"/>
+        <!--变换频率-->
+        <ListPreference
+            android:key="random_time"
+            android:title="@string/frequency"
+            android:summary="@string/click_to_chose_the_frequency_of_actions"
+            android:entries="@array/random_time"
+            android:entryValues="@array/random_time_value"
+            android:defaultValue="5000"
+            android:negativeButtonText="@string/cancel"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/more"
+        android:key="more_setting">
+        <Preference
+            android:key = "alarm"
+            android:title = "@string/switch_clock"/>
+        <CheckBoxPreference
+            android:key="open_bluetooth"
+            android:title="打开蓝牙"
+            />
+        <CheckBoxPreference
+            android:key="open_bluetooth"
+            android:title="打开微信"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

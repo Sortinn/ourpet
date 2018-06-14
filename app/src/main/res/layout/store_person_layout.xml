@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlack">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/store_layout_title"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:padding="5dip"/>
+
+    <com.tencent.xidian.ourpet.store.StoreGridView
+        android:id="@+id/store_person_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90.0dip"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:scrollbars="none" />
+
+</LinearLayout>
