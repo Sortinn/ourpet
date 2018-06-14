@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,11 +15,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.security.auth.login.LoginException;
-
-import butterknife.BindView;
-import butterknife.OnClick;
 
 public class PersonSettingDialog extends AlertDialog {
     private static final String TAG = "PersonSettingDialog";
@@ -36,6 +30,18 @@ public class PersonSettingDialog extends AlertDialog {
     private CharSequence mTitleName;//引入名称
     private String mPersonName;//引入人物名称
     private PersonSettingAdapter personSettingAdapter;//人物列表适配器
+
+    private final Object piggyData[][] = {
+            //perference_key        //icon                    //name
+            {"piggy_action_stand", R.raw.piggy_fly, R.string.str_fly},
+            {"piggy_action_drink", R.raw.piggy_drink_0, R.string.str_drink_juice}
+    };
+
+    private final Object pikachuData[][] = {
+            {"pikachu_action_stand", R.raw.stand_1, R.string.person_state_stand},
+            {"pikachu_action_walk", R.raw.walk_to_right1, R.string.person_state_walk}
+    };
+
     private final Object luffyData[][] = {
             //perference_key        //person_setting_icon     //person_setting_name
             {"luffy_action_crawl", R.raw.luffy_crawl_1, R.string.person_state_crawl}
