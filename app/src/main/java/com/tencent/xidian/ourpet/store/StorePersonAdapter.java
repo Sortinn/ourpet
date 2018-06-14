@@ -1,8 +1,6 @@
 package com.tencent.xidian.ourpet.store;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -46,9 +44,9 @@ public class StorePersonAdapter extends SimpleAdapter {
 
     private List<PersonInfo> initLocal(Context context) {
         List<PersonInfo> personData = new ArrayList<>();
-        String name[] = {"luffy", "chopper", "zoro", "law"};
-        int iconId[] = {R.raw.luffy_eat_2, R.raw.chopper_eat_1_1, R.raw.zoro_down_2, R.raw.law_stand};
-        int nameId[] = {R.string.luffy, R.string.chopper, R.string.zoro, R.string.law};
+        String name[] = {"luffy", "chopper", "zoro", "law","piggy","pikachu"};
+        int iconId[] = {R.raw.luffy_eat_2, R.raw.chopper_eat_1_1, R.raw.zoro_down_2, R.raw.law_stand, R.raw.piggy_drink_0, R.raw.stand_1};
+        int nameId[] = {R.string.luffy, R.string.chopper, R.string.zoro, R.string.law,R.string.piggy_full_name,R.string.pikachu_full_name};
 
         for (int i = 0; i < nameId.length; i++) {
             try {
