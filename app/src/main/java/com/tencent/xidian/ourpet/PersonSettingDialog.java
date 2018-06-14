@@ -84,34 +84,31 @@ public class PersonSettingDialog extends AlertDialog {
     public PersonSettingDialog(Context context, String name) {
         //传入新new的上下文和所需人物的名字
         super(context);
-        Log.d(TAG, "PersonSettingDialog: "+name);
+        Log.d(TAG, "PersonSettingDialog: " + name);
         mContext = context;//获取调用者的上下文
         mPersonName = name;//获取需要的人物名字
-        sharedPreferences = mContext.getSharedPreferences(mContext.getString(R.string.our_pets_settings),Context.MODE_PRIVATE);//获取SharedPreferences中的数据
-        if("luffy".equals(mPersonName)){
+        sharedPreferences = mContext.getSharedPreferences(mContext.getString(R.string.our_pets_settings), Context.MODE_PRIVATE);//获取SharedPreferences中的数据
+        if ("luffy".equals(mPersonName)) {
 //            dialogPersonSettingIcon.setImageResource(R.raw.luffy_eat_2);//设置luff图标
 //            mTitleName = mContext.getResources().getText(R.string.luffy_full_name);//设置luff图标的名字
             mIconId = R.raw.luffy_eat_2;//引入luff图标
             mTitleName = mContext.getResources().getText(R.string.luffy_full_name);//引入luff的资源名
-        }
-        else if("zoro".equals(mPersonName)){
+        } else if ("zoro".equals(mPersonName)) {
             mIconId = R.raw.zoro_down_2;//引入zoro图标
             mTitleName = mContext.getResources().getText(R.string.zoro_full_name);//引入zoro的资源名
-        }
-        else if("law".equals(mPersonName)){
+        } else if ("law".equals(mPersonName)) {
             mIconId = R.raw.law_stand;//引入law图标
             mTitleName = mContext.getResources().getText(R.string.law_full_name);//引入law的资源名
-        }
-        else if("chopper".equals(mPersonName)){
+        } else if ("chopper".equals(mPersonName)) {
             mIconId = R.raw.chopper_eat_1_1;//引入chopper图标
             mTitleName = mContext.getResources().getText(R.string.chopper_full_name);//引入chopper的资源名
-        }else if ("piggy".equals(mPersonName)) {
+        } else if ("piggy".equals(mPersonName)) {
             mIconId = R.raw.piggy_drink_1;
             mTitleName = mContext.getResources().getText(R.string.piggy_full_name);
         } else if ("pikachu".equals(mPersonName)) {
             mIconId = R.raw.stand_1;
             mTitleName = mContext.getResources().getText(R.string.pikachu_full_name);
-        }else{
+        } else {
 
         }
 
@@ -130,16 +127,16 @@ public class PersonSettingDialog extends AlertDialog {
             @Override
             public void onClick(View v) {
                 //当用户选择之后将数据进行保存到手机内存中
-                if(personSettingAdapter.isAnyCheck()){
+                if (personSettingAdapter.isAnyCheck()) {
                     //将展示的人物key"person_show_name"和value:mPersonName对应起来
                     //方便在服务中获取
                     sharedPreferences
                             .edit()
-                            .putString("person_show_name",mPersonName)
+                            .putString("person_show_name", mPersonName)
                             .apply();
                     PersonSettingDialog.this.cancel();
-                }else{
-                    Toast.makeText(mContext,R.string.choice_at_least_one,Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(mContext, R.string.choice_at_least_one, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -150,30 +147,34 @@ public class PersonSettingDialog extends AlertDialog {
             }
         });
 
-        personSettingAdapter = new PersonSettingAdapter(mContext,getListData(mPersonName),0,null,null);//引入适配器
+        personSettingAdapter = new PersonSettingAdapter(mContext, getListData(mPersonName), 0, null, null);//引入适配器
         ListView listView = (ListView) findViewById(R.id.dialog_person_setting_listView);
         listView.setAdapter(personSettingAdapter);//将列表适配器加入进去并生成View
         Log.d(TAG, "onCreate: setAdapter(personSettingAdapter)");
     }
 
-    private List<HashMap<String,Object>> getListData(String name){
-        List<HashMap<String,Object>> listData = new ArrayList<>();
+    private List<HashMap<String, Object>> getListData(String name) {
+        List<HashMap<String, Object>> listData = new ArrayList<>();
 
         Object dataArray[][] = null;
-        if("luffy".equals(name)){
+        if ("luffy".equals(name)) {
             dataArray = luffyData;
-        }else if("zoro".equals(name)){
+        } else if ("zoro".equals(name)) {
             dataArray = zoroData;
-        }else if("law".equals(name)){
+        } else if ("law".equals(name)) {
             dataArray = lawData;
-        }else if("chopper".equals(name)){
+        } else if ("chopper".equals(name)) {
             dataArray = chopperData;
+        } else if ("piggy".equals(name)) {
+            dataArray = piggyData;
+        } else if ("pikachu".equals(name)) {
+            dataArray = pikachuData;
         }
         //for 循环遍历设置 key--value
-        for(Object data[]:dataArray){
+        for (Object data[] : dataArray) {
             //为每一项设置key key通过key将数据取出
             HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put(OBJECT_KEY_SP, 	 data[0]);//将OBJECT_KEY_SP和人物动作进行匹配起来。
+            map.put(OBJECT_KEY_SP, data[0]);//将OBJECT_KEY_SP和人物动作进行匹配起来。
             map.put(OBJECT_KEY_ICON, BitmapFactory.decodeResource(mContext.getResources(), (Integer) data[1]));//将OBJECT_KEY_ICON和人物图片资源匹配起来
             map.put(OBJECT_KEY_NAME, mContext.getText((Integer) data[2]));//将OBJECT_KEY_NAME和资源文件中的资源匹配起来。
             listData.add(map);//
