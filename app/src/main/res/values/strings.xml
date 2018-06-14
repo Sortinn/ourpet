@@ -47,7 +47,9 @@
     <string name="back">后退</string>
 
     <!--PersonSettingDialog -->
+    <string name="str_fly">飞行</string>
     <string name="person_state_crawl">爬</string>
+    <string name="str_drink_juice">喝果汁</string>
     <string name="person_state_stand">站立</string>
     <string name="person_state_sit">坐</string>
     <string name="person_state_walk">走路</string>
